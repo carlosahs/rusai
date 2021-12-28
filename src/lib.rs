@@ -7,7 +7,21 @@ mod tests {
     }
 }
 
-pub struct Perceptron<const N: usize> {
-    weights: [f64; N],
-    bias: f64,
+mod math {
+    fn dot_product(ws: &[f64], xs: &[bool]) -> f64 {
+        return 0.;
+    }
+}
+
+mod neurons {
+    pub struct Perceptron<const N: usize> {
+        weights: [f64; N],
+        bias: f64,
+    }
+
+    impl<const N: usize> Perceptron<N> {
+        fn out(&self, xs: &[bool; N]) -> bool {
+            return false;
+        }
+    }
 }
