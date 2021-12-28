@@ -7,12 +7,6 @@ mod tests {
     }
 }
 
-mod math {
-    fn dot_product(ws: &[f64], xs: &[bool]) -> f64 {
-        return 0.;
-    }
-}
-
 mod neurons {
     pub struct Perceptron<const N: usize> {
         weights: [f64; N],
