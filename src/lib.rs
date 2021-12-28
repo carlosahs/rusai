@@ -9,8 +9,8 @@ mod tests {
 
 mod neurons {
     pub struct Perceptron<const N: usize> {
-        weights: [f64; N],
-        bias: f64,
+        pub weights: [f64; N],
+        pub bias: f64,
     }
 
     impl<const N: usize> Perceptron<N> {
