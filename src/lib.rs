@@ -14,7 +14,7 @@ mod neurons {
     }
 
     impl<const N: usize> Perceptron<N> {
-        fn out(&self, xs: &[bool; N]) -> bool {
+        pub fn out(&self, xs: &[bool; N]) -> bool {
             return false;
         }
     }
