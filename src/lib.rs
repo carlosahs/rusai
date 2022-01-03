@@ -15,13 +15,17 @@ mod neurons {
 
     impl<const N: usize> Perceptron<N> {
         pub fn out(&self, xs: &[bool; N]) -> bool {
-            false
+            if self.dot_product(xs) + self.bias <= 0. {
+                false;
+            }
+
+            true
         }
 
         fn dot_product(&self, xs: &[bool; N]) -> f64 {
             let mut dot = 0.;
 
-            for i in (0..N) {
+            for i in 0..N {
                 if xs[i] {
                     dot += self.weights[i];
                 }
