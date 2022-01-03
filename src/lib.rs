@@ -14,6 +14,13 @@ mod neurons {
     }
 
     impl<const N: usize> Neuron<N> {
+        pub fn from(ws: [f64; N], b: f64) -> Neuron<N> {
+            Neuron {
+                weights: ws,
+                bias: b,
+            }
+        }
+
         pub fn set_weights(&mut self, ws: &[f64; N]) {
             for i in 0..N {
                 self.weights[i] = ws[i];
