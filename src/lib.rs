@@ -25,6 +25,10 @@ mod neurons {
         }
     }
 
+    pub struct Perceptron<const N: usize> {
+        pub neuron: Neuron<N>,
+    }
+
     impl<const N: usize> Neuron<N> {
         pub fn out(&self, xs: &[bool; N]) -> bool {
             if self.dot_product(xs) + self.bias <= 0. {
