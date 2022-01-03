@@ -8,6 +8,11 @@ mod tests {
 }
 
 mod neurons {
+    struct Neuron<const N: usize> {
+        weights: [f64; N],
+        bias: f64,
+    }
+
     pub struct Perceptron<const N: usize> {
         pub weights: [f64; N],
         pub bias: f64,
