@@ -14,6 +14,18 @@ mod neurons {
     }
 
     impl<const N: usize> Neuron<N> {
+        pub fn set_weights(&mut self, ws: &[f64; N]) {
+            for i in 0..N {
+                self.weights[i] = ws[i];
+            }
+        }
+
+        pub fn set_bias(&mut self, b: f64) {
+            self.bias = b;
+        }
+    }
+
+    impl<const N: usize> Neuron<N> {
         pub fn out(&self, xs: &[bool; N]) -> bool {
             if self.dot_product(xs) + self.bias <= 0. {
                 false;
