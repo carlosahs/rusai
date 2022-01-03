@@ -8,17 +8,12 @@ mod tests {
 }
 
 mod neurons {
-    struct Neuron<const N: usize> {
-        weights: [f64; N],
-        bias: f64,
-    }
-
-    pub struct Perceptron<const N: usize> {
+    pub struct Neuron<const N: usize> {
         pub weights: [f64; N],
         pub bias: f64,
     }
 
-    impl<const N: usize> Perceptron<N> {
+    impl<const N: usize> Neuron<N> {
         pub fn out(&self, xs: &[bool; N]) -> bool {
             if self.dot_product(xs) + self.bias <= 0. {
                 false;
