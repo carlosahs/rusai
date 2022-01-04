@@ -8,6 +8,10 @@ mod tests {
 }
 
 mod neurons {
+    pub trait Model {
+        fn activation_function();
+    }
+
     pub struct Neuron<const N: usize> {
         pub weights: [f64; N],
         pub bias: f64,
@@ -30,10 +34,6 @@ mod neurons {
         pub fn set_bias(&mut self, b: f64) {
             self.bias = b;
         }
-    }
-
-    pub struct Perceptron<const N: usize> {
-        pub neuron: Neuron<N>,
     }
 }
 
