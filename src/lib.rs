@@ -18,7 +18,7 @@ mod neurons {
     }
 
     impl<const N: usize> Neuron<N> {
-        pub fn from(ws: [f64; N], b: f64) -> Neuron<N> {
+        pub fn new(ws: [f64; N], b: f64) -> Neuron<N> {
             Neuron {
                 weights: ws,
                 bias: b,
