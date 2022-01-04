@@ -35,6 +35,10 @@ mod neurons {
             self.bias = b;
         }
     }
+
+    pub struct Perceptron<const N: usize> {
+        pub neuron: Neuron<N>,
+    }
 }
 
 mod math {
