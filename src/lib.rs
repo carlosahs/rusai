@@ -14,8 +14,8 @@ mod neurons {
     }
 
     pub struct Neuron<const N: usize> {
-        pub weights: [f64; N],
-        pub bias: f64,
+        weights: [f64; N],
+        bias: f64,
     }
 
     impl<const N: usize> Neuron<N> {
