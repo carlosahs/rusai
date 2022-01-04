@@ -39,6 +39,11 @@ mod neurons {
     pub struct Perceptron<const N: usize> {
         pub neuron: Neuron<N>,
     }
+
+    impl<const N: usize> Model for Perceptron<N> {
+        fn activation_function() {
+        }
+    }
 }
 
 mod math {
