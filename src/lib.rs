@@ -50,11 +50,7 @@ mod neurons {
                 }
             }
 
-            if out + self.neuron.bias <= 0. {
-                false;
-            }
-
-            true
+            if out + self.neuron.bias <= 0. { false } else { true }
         }
     }
 }
