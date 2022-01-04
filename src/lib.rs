@@ -10,6 +10,7 @@ mod tests {
 mod neurons {
     pub trait Model<T, const N: usize> {
         fn activation_function(&self, xs: &[T; N]) -> T;
+        fn neuron(&self) -> &Neuron<N>;
     }
 
     pub struct Neuron<const N: usize> {
@@ -51,6 +52,10 @@ mod neurons {
             }
 
             if out + self.neuron.bias <= 0. { false } else { true }
+        }
+
+        fn neuron(&self) -> &Neuron<N> {
+            &self.neuron
         }
     }
 }
