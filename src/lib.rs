@@ -8,8 +8,8 @@ mod tests {
 }
 
 mod neurons {
-    pub trait Model<T, const N: usize> {
-        fn activation_function(&self) -> T;
+    pub trait Model {
+        fn activation_function<T>(&self) -> T;
     }
 
     pub struct Neuron<const N: usize> {
