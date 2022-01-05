@@ -36,7 +36,10 @@ mod neurons {
         }
     }
 
-    pub struct Perceptron<const N: usize>;
+    pub struct Perceptron<const N: usize> {
+        neuron: Neuron<N>,
+        inputs: [bool; N],
+    }
 
     impl<const N: usize> Model<bool, N> for Perceptron<N> {
         fn activation_function(neuron: Neuron<N>, xs: &[bool; N]) -> bool{
