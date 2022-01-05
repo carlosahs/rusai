@@ -12,14 +12,16 @@ mod neurons {
         fn activation_function<T>(&self) -> T;
     }
 
-    pub struct Neuron<const N: usize> {
+    pub struct Neuron<T, const N: usize> {
+        inputs: [Option<T>; N],
         weights: [f64; N],
         bias: f64,
     }
 
-    impl<const N: usize> Neuron<N> {
-        pub fn new(ws: [f64; N], b: f64) -> Neuron<N> {
+    impl<T, const N: usize> Neuron<T, N> {
+        pub fn new(ws: [f64; N], b: f64) -> Neuron<T, N> {
             Neuron {
+                inputs: [None; N],
                 weights: ws,
                 bias: b,
             }
