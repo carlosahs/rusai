@@ -8,9 +8,9 @@ mod tests {
 }
 
 mod neurons {
-    // pub trait Model<T, const N: usize> {
-    //     fn activation_function(neuron: Neuron<N>, xs: &[T; N]) -> T;
-    // }
+    pub trait Model<T, const N: usize> {
+        fn activation_function(&self) -> T;
+    }
 
     pub struct Neuron<const N: usize> {
         weights: [f64; N],
