@@ -8,9 +8,9 @@ mod tests {
 }
 
 mod neurons {
-    pub trait Model<T, const N: usize> {
-        fn activation_function(neuron: Neuron<N>, xs: &[T; N]) -> T;
-    }
+    // pub trait Model<T, const N: usize> {
+    //     fn activation_function(neuron: Neuron<N>, xs: &[T; N]) -> T;
+    // }
 
     pub struct Neuron<const N: usize> {
         weights: [f64; N],
@@ -41,19 +41,19 @@ mod neurons {
         inputs: [bool; N],
     }
 
-    impl<const N: usize> Model<bool, N> for Perceptron<N> {
-        fn activation_function(neuron: Neuron<N>, xs: &[bool; N]) -> bool{
-            let mut out = 0.;
+    // impl<const N: usize> Model<bool, N> for Perceptron<N> {
+    //     fn activation_function(neuron: Neuron<N>, xs: &[bool; N]) -> bool{
+    //         let mut out = 0.;
 
-            for i in 0..N {
-                if xs[i] {
-                    out += neuron.weights[i];
-                }
-            }
+    //         for i in 0..N {
+    //             if xs[i] {
+    //                 out += neuron.weights[i];
+    //             }
+    //         }
 
-            if out + neuron.bias <= 0. { false } else { true }
-        }
-    }
+    //         if out + neuron.bias <= 0. { false } else { true }
+    //     }
+    // }
 }
 
 mod math {
