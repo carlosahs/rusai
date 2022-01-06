@@ -18,7 +18,9 @@ mod neurons {
         bias: f64,
     }
 
-    impl<T, const N: usize> Neuron<T, N> {
+    impl<T, const N: usize> Neuron<T, N> 
+        where Option<T>: Copy
+    {
         pub fn new(ws: [f64; N], b: f64) -> Neuron<T, N> {
             Neuron {
                 inputs: [None; N],
